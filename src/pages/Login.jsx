@@ -35,11 +35,13 @@ const Login = () => {
             });
 
             const data = await response.json();
-console.log('data',data);
+
            if (data.token && data.user) {
+               console.log('onee');
     login(data.user, data.token);
     navigate("/profile");
 } else {
+                 console.log('twoo');
                 setError(data.message || "Login failed. Please try again.");
             }
         } catch (err) {
