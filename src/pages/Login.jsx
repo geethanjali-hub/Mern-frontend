@@ -36,10 +36,10 @@ const Login = () => {
 
             const data = await response.json();
 console.log('data',data);
-            if (data.success) {
-                login(data.data.user, data.data.token);
-                navigate("/profile");
-            } else {
+           if (data.token && data.user) {
+    login(data.user, data.token);
+    navigate("/profile");
+} else {
                 setError(data.message || "Login failed. Please try again.");
             }
         } catch (err) {
