@@ -35,7 +35,7 @@ const Login = () => {
             });
 
             const data = await response.json();
-
+console.log('data',data);
             if (data.success) {
                 login(data.data.user, data.data.token);
                 navigate("/profile");
