@@ -24,7 +24,7 @@ const Profile = () => {
 
             const data = await response.json();
 
-            if (data.user) {
+            if (data.success) {
                 updateUser(data.data);
             } else {
                 setError(data.message || "Failed to load profile");
