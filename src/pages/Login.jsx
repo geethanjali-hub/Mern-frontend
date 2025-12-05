@@ -37,7 +37,7 @@ const Login = () => {
             const data = await response.json();
 
            if (data.token && data.user) {
-               console.log('onee');
+             
     login(data.user, data.token);
     navigate("/profile");
 } else {
